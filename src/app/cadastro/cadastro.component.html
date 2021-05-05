@@ -1,0 +1,15 @@
+<div class="wrapper fadeInDown" >
+  <div id="formContent" style="margin-top: 100px;">
+    <form style="margin-top: 30px;" #userForm="ngForm">
+      <input type="text" id="nome" class="fadeIn second" name="nome" placeholder="Nome" required minlength="3" [(ngModel)]="user.nome">
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" required [(ngModel)]="user.email">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Senha" required minlength="5" [(ngModel)]="user.senha">
+      <input type="password" id="confirmacao" class="fadeIn third" name="confirmacao" placeholder="Confirmação da senha" required minlength="5" [(ngModel)]="confSenha">
+      <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid" (click)="cadastrar()">Salvar</button>
+    </form>
+
+    <div id="formFooter">
+      <a class="underlineHover" [routerLink]="['/login']">Fazer login</a>
+    </div>
+  </div>
+</div>
