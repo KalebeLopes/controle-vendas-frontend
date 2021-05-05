@@ -1,0 +1,19 @@
+
+<div class="wrapper fadeInDown" >
+  <div id="formContent" style="margin-top: 100px;">
+    <div class="fadeIn first">
+      <img src="../assets/img.png" id="icon" alt="User Icon" />
+    </div>
+
+    <form>
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" [(ngModel)]="user.email">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Senha" [(ngModel)]="user.senha">
+      <input type="button" class="fadeIn fourth" value="Log In" (click)="logar()" >
+    </form>
+
+    <div id="formFooter">
+      <a class="underlineHover" [routerLink]="['/cadastro']">Cadastre-se</a><br><br>
+      <a class="underlineHover" href="#">Esqueceu sua Senha?</a>
+    </div>
+  </div>
+</div>
