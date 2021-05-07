@@ -23,4 +23,11 @@ export class AppComponent {
     return this.router.url
   }
 
+  logout(): void{
+    localStorage.removeItem('token')
+    localStorage.removeItem('expiresIn')
+
+    this.router.navigate(['/login'])
+  }
+
 }

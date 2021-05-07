@@ -1,5 +1,5 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="hideNav() != '/login' && hideNav() != '/cadastro'">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="hideNav() !== '/login' && hideNav() !== '/cadastro'">
     <a [routerLink] = "['venda']" class="nav-link">Vendas <span class="sr-only">(current)</span></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,9 +12,35 @@
           <a class="nav-link">Tarifas <span class="sr-only">(current)</span></a>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#" data-toggle="modal" data-target="#logoutModal">Deslogar</a>
+        </li>
+      </ul>
     </div>
-
   </nav>
+
+  <div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 style="margin-left: 80px;">Deslogar<i class="fa fa-lock"></i></h4>
+        </div>
+        <div class="modal-body">
+        <p style="margin-left: 30px;"><i class="fa fa-question-circle"></i> Você quer mesmo deslogar? <br /></p>
+          <div class="actionsBtns">
+            <form action="/logout" method="post">
+              <div style="margin-left: 35px;">
+                <!-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> -->
+                <input type="submit" class="btn btn-default btn-primary" data-dismiss="modal" value="Deslogar" (click)="logout()"/>
+                <button style="margin-left: 10px;" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
 
   <router-outlet></router-outlet>
 </div>
