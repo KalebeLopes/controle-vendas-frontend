@@ -43,8 +43,9 @@ export class LoginComponent implements OnInit {
       this.loginService.logar(this.loginForm.value)
       .subscribe((res: any) => {
         // console.log(res.token)
-        if(res.token){
+        if(res.token && res.expiresIn){
           localStorage.setItem('token', res.token)
+          localStorage.setItem('expiresIn', res.expiresIn)
           console.log(localStorage.getItem('token'))
           this.router.navigate(['/venda'])
         }
