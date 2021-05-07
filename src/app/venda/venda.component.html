@@ -1,0 +1,14 @@
+<div class="wrapper fadeInDown" >
+  <div id="formContent" style="margin-top: 100px;">
+    <form style="margin-top: 30px;" #userForm="ngForm">
+      <input type="text" id="tipo" class="fadeIn second" name="tipo" placeholder="Tipo" required minlength="3" >
+      <input type="text" id="valor" class="fadeIn second" name="valor" placeholder="Valor" required minlength="3" >
+      <input type="text" id="data" class="fadeIn second" name="data" placeholder="Data" required minlength="3" >
+      <div>
+        <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid" (click) = salvar() >Salvar</button>
+        <button type="submit" class="btn btn-success" [routerLink]="['/vendas']" >Listar vendas</button>
+      </div>
+    </form>
+
+  </div>
+</div>
