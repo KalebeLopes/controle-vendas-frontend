@@ -15,6 +15,10 @@ export class VendaService {
     return this.$http.post(`${this.API}`, venda, {observe: 'response'})
   }
 
+  getOne(idSale: string) {
+    return this.$http.get<Venda>(`${this.API}/detail/${idSale}`, {observe: 'response'})
+  }
+
   getAllSales() {
     return this.$http.get<Venda[]>(`${this.API}`, {observe: 'response'})
   }
