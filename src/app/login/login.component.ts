@@ -4,8 +4,6 @@ import { LoginService } from '../service/login.service'
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { User } from '../Objetos/User'
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -37,7 +35,6 @@ export class LoginComponent implements OnInit {
     // const senha: String = this.loginForm.get('senha')?.value
     
     console.log(this.loginForm.value)
-    // console.log(senha)
 
     if (this.loginForm.valid) {
       this.loginService.logar(this.loginForm.value)
@@ -47,7 +44,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', res.token)
           localStorage.setItem('expiresIn', res.expiresIn)
           console.log(localStorage.getItem('token'))
-          this.router.navigate(['/venda'])
+          this.router.navigate(['/home'])
         }
       }, 
       (err: HttpErrorResponse) => {
