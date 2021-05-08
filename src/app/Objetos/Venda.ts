@@ -7,7 +7,8 @@ export class Venda {
     public tipoPagamento: String,
     public qtdParcelas: number,
     public valorTotal: number,
-    public qtdTotalItens: number
+    public qtdTotalItens: number,
+    public _id: String
 
   ) {}
   
