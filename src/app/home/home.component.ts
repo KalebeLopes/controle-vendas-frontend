@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
 
-import { LoginService } from '../service/login.service'
+import { AuthService } from '../service/auth.service'
 import { VendaService } from '../service/venda.service'
 import { Venda } from '../Objetos/Venda'
 import { QueryBindingType } from '@angular/compiler/src/core';
@@ -17,14 +17,14 @@ export class HomeComponent implements OnInit {
   vendas: Venda[] = []
 
   constructor(
-    private logged: LoginService,
+    private logged: AuthService,
     private vendaService: VendaService,
     private router: Router
     ) { }
 
   ngOnInit(): void {
     if (this.logged.loggedIn()) {
-      alert('Token expirado')
+      alert('Faça login novamente')
       this.router.navigate(['/login'])
     }
     this.allSales()
