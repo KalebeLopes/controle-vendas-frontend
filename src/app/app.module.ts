@@ -10,7 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './service/login.service'
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { HomeComponent } from './home/home.component'
-import { AuthInterceptor } from './interceptor/auth-interceptor.interceptor'
+import { AuthInterceptor } from './interceptor/auth-interceptor.interceptor';
+import { DetalheComponent } from './detalhe/detalhe.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AuthInterceptor } from './interceptor/auth-interceptor.interceptor'
     LoginComponent,
     CadastroComponent,
     HomeComponent,
+    DetalheComponent,
   ],
   imports: [
     BrowserModule,
