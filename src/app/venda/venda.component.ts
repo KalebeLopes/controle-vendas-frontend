@@ -13,8 +13,8 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./venda.component.css']
 })
 export class VendaComponent implements OnInit {
-  venda: Venda = new Venda('', '', '')
-  vendas: Venda[] = []
+  // venda: Venda = new Venda('', '', '')
+  // vendas: Venda[] = []
 
   constructor(
     private router: Router, 
@@ -23,6 +23,7 @@ export class VendaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
   }
 
   salvar(){
