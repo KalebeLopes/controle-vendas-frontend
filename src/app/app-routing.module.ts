@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component'
 import { VendaComponent } from './venda/venda.component'
 import { CadastroComponent } from './cadastro/cadastro.component'
 import { AppComponent } from './app.component'
-import { VendasComponent } from './vendas/vendas.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'venda', component: VendaComponent
   },
   {
-    path: 'vendas', component: VendasComponent
+    path: 'home', component: HomeComponent
   }
 ];
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,7 +9,8 @@ import { VendaComponent } from './venda/venda.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './service/login.service'
 import { CadastroComponent } from './cadastro/cadastro.component';
-import { VendasComponent } from './vendas/vendas.component'
+import { HomeComponent } from './home/home.component'
+import { AuthInterceptor } from './interceptor/auth-interceptor.interceptor'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { VendasComponent } from './vendas/vendas.component'
     VendaComponent,
     LoginComponent,
     CadastroComponent,
-    VendasComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,11 @@ import { VendasComponent } from './vendas/vendas.component'
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, {
+    provide: HTTP_INTERCEPTORS, 
+    useClass: AuthInterceptor, 
+    multi: true 
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
