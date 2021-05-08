@@ -8,10 +8,14 @@ import { Venda } from '../Objetos/Venda';
 })
 export class VendaService {
 
-  private readonly API = `${environment.API}/venda`
+  private readonly API = `${environment.API}/sale`
   constructor(private $http: HttpClient) { }
 
-  criar(venda: Venda) {
+  create(venda: Venda) {
     return this.$http.post(`${this.API}`, venda, {observe: 'response'})
+  }
+
+  getAllSales() {
+    return this.$http.get<Venda[]>(`${this.API}`, {observe: 'response'})
   }
 }
