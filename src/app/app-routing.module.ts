@@ -6,6 +6,8 @@ import { VendaComponent } from './venda/venda.component'
 import { CadastroComponent } from './cadastro/cadastro.component'
 import { AppComponent } from './app.component'
 import { HomeComponent } from './home/home.component';
+import { DetalheComponent } from './detalhe/detalhe.component';
+
 
 
 const routes: Routes = [
@@ -20,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'home', component: HomeComponent
+  },
+  {
+    path: 'detail/:id', component: DetalheComponent
   }
 ];
 
