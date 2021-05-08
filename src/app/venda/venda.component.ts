@@ -4,6 +4,7 @@ import { LoginService } from '../service/login.service'
 import { Venda } from '../Objetos/Venda'
 import { ActivatedRoute, Router } from '@angular/router';
 import { VendaService } from '../service/venda.service';
+import { AuthService } from '../service/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 
@@ -19,11 +20,15 @@ export class VendaComponent implements OnInit {
   constructor(
     private router: Router, 
     private route: ActivatedRoute,
-    private vendaService: VendaService
+    private vendaService: VendaService,
+    private logged: AuthService
   ) { }
 
   ngOnInit(): void {
-    
+    if(this.logged.loggedIn()){
+      alert('Faça login novamente')
+      this.router.navigate(['/login'])
+    }
   }
 
   salvar(){
