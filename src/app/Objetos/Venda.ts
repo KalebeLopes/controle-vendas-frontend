@@ -1,8 +1,14 @@
+import { Item } from './Item'
+
 export class Venda {
   constructor(
-    public tipo: string, 
-    public valor: string,
-    public data: string
+    public vendas: Item[], 
+    public data: Date,
+    public tipoPagamento: String,
+    public qtdParcelas: number,
+    public valorTotal: number,
+    public qtdTotalItens: number
+
   ) {}
   
   // public aplicarDesconto = (preco: number): number => {
