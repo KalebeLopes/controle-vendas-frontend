@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { environment } from 'src/environments/environment';
-import { JwtHelperService } from '@auth0/angular-jwt'
 
+import { environment } from 'src/environments/environment';
 import { User } from '../Objetos/User';
 
 @Injectable({
@@ -11,7 +10,6 @@ import { User } from '../Objetos/User';
 
 export class LoginService {
   private readonly API = `${environment.API}/user`
-  helper = new JwtHelperService()
 
   constructor(private $http: HttpClient) { }
 
@@ -21,14 +19,6 @@ export class LoginService {
 
   logar(body: any){
     return this.$http.post(`${this.API}/login`, body, {observe: 'body'})
-  }
-
-  loggedIn() {
-    const token = localStorage.getItem('token')
-    if (token)
-      return this.helper.isTokenExpired(token)
-    else 
-      return true
   }
 
   // deletar(id: any){
